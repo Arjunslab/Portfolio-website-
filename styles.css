@@ -1,0 +1,116 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #0d0d0d;
+  color: #e0e0e0;
+  line-height: 1.6;
+  padding: 20px;
+  overflow-x: hidden;
+}
+a {
+  color: #1e90ff;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Header */
+header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+header h1 {
+  font-size: 3rem;
+  color: #00ff00;
+  position: relative;
+}
+header .tagline {
+  font-size: 1.2rem;
+  color: #ff00ff;
+  animation: flicker 2s infinite;
+}
+
+/* Sections */
+section {
+  margin-bottom: 30px;
+}
+section h2 {
+  font-size: 2rem;
+  color: #00ff00;
+  border-bottom: 2px solid #ff00ff;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+  animation: glow 2s infinite alternate;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+/* Animations */
+@keyframes flicker {
+  0%, 100% {opacity: 1;}
+  50% {opacity: 0.5;}
+}
+@keyframes glow {
+  0% {text-shadow: 0 0 5px #00ff00, 0 0 10px #ff00ff;}
+  50% {text-shadow: 0 0 10px #00ff00, 0 0 20px #ff00ff;}
+  100% {text-shadow: 0 0 5px #00ff00, 0 0 10px #ff00ff;}
+}
+
+/* Glitch Effect */
+.glitch {
+  color: #00ff00;
+  font-size: 3rem;
+  position: relative;
+  animation: glitch 1s infinite;
+}
+.glitch::before, .glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+}
+.glitch::before {
+  animation: glitchTop 1s infinite;
+  color: #ff00ff;
+  clip: rect(0, 900px, 50px, 0);
+}
+.glitch::after {
+  animation: glitchBottom 1s infinite;
+  color: #00ffff;
+  clip: rect(50px, 900px, 100px, 0);
+}
+@keyframes glitch {
+  0% {transform: translate(0);}
+  20% {transform: translate(-2px, 2px);}
+  40% {transform: translate(2px, -2px);}
+  60% {transform: translate(-1px, 1px);}
+  80% {transform: translate(1px, -1px);}
+  100% {transform: translate(0);}
+}
+@keyframes glitchTop {
+  0% {transform: translate(0);}
+  20% {transform: translate(-3px, -3px);}
+  40% {transform: translate(3px, 3px);}
+  60% {transform: translate(-2px, -2px);}
+  80% {transform: translate(2px, 2px);}
+  100% {transform: translate(0);}
+}
+@keyframes glitchBottom {
+  0% {transform: translate(0);}
+  20% {transform: translate(3px, 3px);}
+  40% {transform: translate(-3px, -3px);}
+  60% {transform: translate(2px, 2px);}
+  80% {transform: translate(-2px, -2px);}
+  100% {transform: translate(0);}
+}
