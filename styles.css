@@ -78,3 +78,14 @@ footer a {
 footer a:hover {
   color: #7cffd1;
 }
+#dynamicText::after {
+  content: "|";
+  margin-left: 6px;
+  opacity: 1;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
