@@ -1,46 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Arjun Bajpai | Developer</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Arjun | Developer</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <h1 class="glitch" data-text="Arjun Bajpai">Arjun Bajpai</h1>
-    <p class="tagline">12yo Python Dev | Ethical Hacker | Tech Enthusiast</p>
-  </header>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>I'm Arjun Bajpai, a passionate developer exploring the world of coding. Currently diving deep into Python and ethical hacking.</p>
+  <!-- HERO -->
+  <section class="hero">
+    <h1>I build fast apps,<br>break systems <span>(ethically)</span>.</h1>
+    <p>Node.js • Android • ESP32 • Security</p>
+
+    <div class="buttons">
+      <a href="#projects" class="btn primary">View Projects</a>
+      <a href="https://github.com/YOUR_GITHUB" target="_blank" class="btn">GitHub</a>
+    </div>
   </section>
 
-  <section id="projects">
+  <!-- PROJECTS -->
+  <section id="projects" class="section">
     <h2>Projects</h2>
-    <ul>
-      <li><strong>Arjun</strong> - A tool for HTTP parameter discovery in web applications.</li>
-      <li><strong>Spotify-Clone</strong> - A clone of Spotify built with HTML and CSS.</li>
-      <li><strong>N3RD_K1LL_B0T</strong> - A JavaScript-based bot for fun and learning.</li>
-      <li><strong>easycalc-flask</strong> - A simple calculator app built with Flask.</li>
-    </ul>
+
+    <div class="projects">
+      <div class="card">
+        <h3>RFID Attendance System</h3>
+        <p>ESP32 + RFID based real-time attendance system with LCD.</p>
+        <span>ESP32 • IoT • Embedded</span>
+        <div class="links">
+          <a href="#">Live</a>
+          <a href="#">Code</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Voice Assistant</h3>
+        <p>Python-based assistant with multi-user login and commands.</p>
+        <span>Python • Automation</span>
+        <div class="links">
+          <a href="#">Live</a>
+          <a href="#">Code</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Android App</h3>
+        <p>Custom Android app built with real use-cases, not calculator.</p>
+        <span>Android • Java</span>
+        <div class="links">
+          <a href="#">Live</a>
+          <a href="#">Code</a>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <section id="skills">
-    <h2>Skills</h2>
-    <p>Python, HTML, CSS, JavaScript, Flask, Ethical Hacking</p>
+  <!-- ABOUT -->
+  <section class="section about">
+    <h2>About</h2>
+    <p>
+      I like building things that actually work.  
+      Mostly code, sometimes hardware. Sleep optional.
+    </p>
   </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Reach out to me on <a href="https://github.com/arjunslab" target="_blank">GitHub</a>.</p>
-     <p>Reach out to me on <a href="https://www.instagram.com/coder_arjunb/" target="_blank">Instagram</a>.</p>
-    
-  </section>
-
+  <!-- FOOTER -->
   <footer>
-    <p>&copy; 2025 Arjun Bajpai</p>
+    <a href="https://github.com/Arjunslab" target="_blank">GitHub</a>
+    <a href="https://instagram.com/coder_Arjunb" target="_blank">Instagram</a>
+    <a href="mailto:arjunb5454@proton.me">Email</a>
   </footer>
 
   <script src="script.js"></script>
