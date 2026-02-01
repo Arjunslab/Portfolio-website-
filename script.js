@@ -5,29 +5,35 @@ const texts = [
   "Break. Fix. Ship."
 ];
 
-const dynamicText = document.getElementById("dynamicText");
-const hero = document.querySelector(".hero");
+const element = document.getElementById("dynamicText");
 
-window.addEventListener("scroll", () => {
-  const heroTop = hero.offsetTop;
-  const heroHeight = hero.offsetHeight;
-  const scrollY = window.scrollY;
+let textIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
 
-  // Only change text while hero is in view
-  if (scrollY >= heroTop && scrollY <= heroTop + heroHeight) {
-    const progress = (scrollY - heroTop) / heroHeight;
-    const index = Math.min(
-      texts.length - 1,
-      Math.floor(progress * texts.length)
-    );
+function typeEffect() {
+  const currentText = texts[textIndex];
 
-    dynamicText.textContent = texts[index];
+  if (!isDeleting) {
+    // typing
+    element.textContent = currentText.slice(0, charIndex + 1);
+    charIndex++;
+
+    if (charIndex === currentText.length) {
+      setTimeout(() => isDeleting = true, 1200); // pause after full text
+    }
+  } else {
+    // deleting
+    element.textContent = currentText.slice(0, charIndex - 1);
+    charIndex--;
+
+    if (charIndex === 0) {
+      isDeleting = false;
+      textIndex = (textIndex + 1) % texts.length;
+    }
   }
 
-  // Tinder-style card stack
-  document.querySelectorAll(".card").forEach((card, i) => {
-    const offset = scrollY / 600;
-    card.style.transform = `translateY(${i * 40 - offset * 20}px) scale(${1 - i * 0.04})`;
-    card.style.opacity = 1 - i * 0.15;
-  });
-});
+  setTimeout(typeEffect, isDeleting ? 50 : 80);
+}
+
+typeEffect();
